@@ -22,8 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in
-    if @current_user.nil?
-      redirect_to new_session_url
-    end
+   !!current_user
+  end
+
+  def require_signed_in
+    redirect_to new_session_url unless logged_in
   end
 end

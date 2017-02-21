@@ -10,7 +10,7 @@ feature "the signup process" do
 
   feature "signing up a user" do
 
-    scenario "shows username on the homepage after signup" do
+    scenario "shows username on the user show page after signup" do
       sign_up
       expect(page).to have_content("Superman")
     end
